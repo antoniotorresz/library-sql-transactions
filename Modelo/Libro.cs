@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Libro
+    public class Libro
     {
-        int idLibro { get; set; }
-        string titulo { get; set; }
-        string editorial { get; set; }
-        DateTime fechaPublicacion { get; set; }
-        string pais { get; set; }
-        string isbn { get; set; }
-        string imageUrl { get; set; }
+        public int idLibro { get; set; }
+        public string titulo { get; set; }
+        public string editorial { get; set; }
+        public DateTime fechaPublicacion { get; set; }
+        public string pais { get; set; }
+        public string isbn { get; set; }
+        public string imageUrl { get; set; }
     }
 }

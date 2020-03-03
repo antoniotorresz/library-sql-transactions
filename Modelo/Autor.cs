@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Autor
+    public class Autor
     {
-        int idAutor { get; set; }
-        string nombre { get; set; }
-        string sexo { get; set; }
-        DateTime fechaAlta { get; set; }
-        string pais { get; set; }
+        public int idAutor { get; set; }
+        public string nombre { get; set; }
+        public string sexo { get; set; }
+        public DateTime fechaAlta { get; set; }
+        public string pais { get; set; }
     }
 }
