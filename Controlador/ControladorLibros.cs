@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace Controlador
 {
-    public class Class1
+    class ControladorLibros
     {
     }
 }
