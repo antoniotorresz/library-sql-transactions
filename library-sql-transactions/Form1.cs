@@ -71,6 +71,11 @@ namespace library_sql_transactions
         private void Btnsave_Click(object sender, EventArgs e)
         {
 
+            string mensaje = ControladorLibros.InsertarLibroAutor(Convert.ToString(tbTitulo.Text), Convert.ToString(tbEdit.Text),
+                Convert.ToDateTime(dateTimePicker1.Value), Convert.ToString(tbPais.Text), Convert.ToString(tbISBN.Text), Convert.ToString(tvUrl.Text)
+                , this.autores, this.pags);
+
+            MessageBox.Show(mensaje);
         }
     }
 }

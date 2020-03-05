@@ -47,25 +47,43 @@ namespace Datos
             string resultado = "";
             SqlConnection sqlConnection = new SqlConnection();
             sqlConnection = Conexion.getInstancia().CrearConexion();
-            SqlTransaction trx = sqlConnection.BeginTransaction();
+
+            SqlTransaction trx = sqlConnection.BeginTransaction("Sample");
             try
             {
                 int idLibro = InsertarLibro(l);
+                SqlCommand command = new SqlCommand("InsertLibroAutor", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
 
+                for (int i = 0; i < idAutores.Count(); i++)
+                {
 
+                    command.Parameters.Add("@idLibro", SqlDbType.VarChar).Value = idLibro;
+                    command.Parameters.Add("@idAutor", SqlDbType.VarChar).Value = idAutores[i];
+                    command.Parameters.Add("@numPaginas", SqlDbType.Date).Value = Convert.ToInt32(pags[i]);
+                    command.ExecuteNonQuery();
+
+                }
 
                 trx.Commit();
+                resultado = "Toda ha salido bien";
             }
-            catch {
+            catch (Exception ex)
+            {
                 trx.Rollback();
+                resultado = ex.Message;
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
             }
 
-            return null;
+            return resultado;
         }
 
         public int InsertarLibro(Libro libro)
         {
-            int idGenerado = 0;
+            Int32 idGenerado = 0;
             SqlConnection sqlConnection = new SqlConnection();
 
             try
@@ -87,6 +105,7 @@ namespace Datos
                 //Abrimos la conexion y guardamos el resultado en respuesta
 
                 sqlConnection.Open();
+                idGenerado = (Int32)command.ExecuteScalar();
 
                 if (command.ExecuteNonQuery() == 1) // el 1 respresenta un resultado exitoso
                 {
@@ -106,10 +125,46 @@ namespace Datos
             }
             finally
             {
-                if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
+                //if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
             }
 
             return idGenerado;
+        }
+
+        public int ObtenerIdAutor(string valor)
+        {
+            int respuesta;
+            SqlConnection sqlConnection = new SqlConnection();
+
+            try
+            {
+                sqlConnection = Conexion.getInstancia().CrearConexion();
+                SqlCommand command = new SqlCommand("IdAutor", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                //Agregamos los parametros:
+                command.Parameters.Add("@nombre", SqlDbType.VarChar).Value = valor;
+
+                //Agregamos un parametro de salida
+                SqlParameter idAutor = new SqlParameter();
+                idAutor.ParameterName = "@id";
+                idAutor.SqlDbType = SqlDbType.Int;
+                idAutor.Direction = ParameterDirection.Output;
+
+                command.Parameters.Add(idAutor);
+                //Abrimos la conexion y guardamos el resultado en respuesta
+                sqlConnection.Open();
+
+                command.ExecuteNonQuery();
+                respuesta = Convert.ToInt32(idAutor.Value);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return respuesta;
         }
 
     }
