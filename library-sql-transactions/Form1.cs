@@ -23,7 +23,35 @@ namespace library_sql_transactions
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ListarLibros();
+            ListarAutores();
 
+        }
+
+        private void ListarAutores()
+        {
+            dgvaut.DataSource = ControladorAutores.ListarAutores();
+            dgvaut.RowHeadersWidthSizeMode =
+            DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvaut.ColumnHeadersHeightSizeMode =
+            DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvaut.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+            dgvaut.AllowUserToResizeColumns = false;
+            dgvaut.AllowUserToResizeRows = false;
+        }
+
+        private void ListarLibros()
+        {
+            dgvlib.DataSource = ControladorLibros.ListarLibros();
+            dgvlib.RowHeadersWidthSizeMode =
+            DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvlib.ColumnHeadersHeightSizeMode =
+            DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvlib.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+            dgvlib.AllowUserToResizeColumns = false;
+            dgvlib.AllowUserToResizeRows = false;
         }
 
         private void LlenarCombo()
@@ -53,6 +81,18 @@ namespace library_sql_transactions
             catch (Exception) { }
         }
 
+        private void LimpiarCampos()
+        {
+            tbTitulo.Text = "";
+            tbEdit.Text = "";
+            tbISBN.Text = "";
+            tbPais.Text = "";
+            tvUrl.Text = "";
+            this.autores.Clear();
+            this.pags.Clear();
+            CargarLista();
+        }
+
         private void CargarLista()
         {
             listView1.Clear();
@@ -76,6 +116,9 @@ namespace library_sql_transactions
                 , this.autores, this.pags);
 
             MessageBox.Show(mensaje);
+            
+            LimpiarCampos();
+            ListarLibros();
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Datos
                 SqlTransaction transaction;
 
                 // Start a local transaction.
-                transaction = connection.BeginTransaction("SampleTransaction");
+                transaction = connection.BeginTransaction("myTransact");
 
                 // Must assign both transaction object and connection
                 // to Command object for a pending local transaction

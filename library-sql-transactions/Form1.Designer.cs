@@ -47,11 +47,17 @@
             this.tbEdit = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tbTitulo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvlib = new System.Windows.Forms.DataGridView();
             this.btnsave = new System.Windows.Forms.Button();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.dgvaut = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlib)).BeginInit();
+            this.bunifuCards3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvaut)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -82,7 +88,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(1061, 255);
+            this.bunifuCards1.Size = new System.Drawing.Size(1061, 234);
             this.bunifuCards1.TabIndex = 0;
             // 
             // label3
@@ -297,36 +303,34 @@
             // 
             // bunifuCards2
             // 
-            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards2.BackColor = System.Drawing.Color.White;
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Tomato;
-            this.bunifuCards2.Controls.Add(this.dataGridView1);
+            this.bunifuCards2.Controls.Add(this.dgvlib);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(12, 273);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(1061, 244);
+            this.bunifuCards2.Size = new System.Drawing.Size(544, 244);
             this.bunifuCards2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvlib
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1061, 244);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvlib.AllowUserToAddRows = false;
+            this.dgvlib.AllowUserToDeleteRows = false;
+            this.dgvlib.AllowUserToOrderColumns = true;
+            this.dgvlib.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlib.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvlib.Location = new System.Drawing.Point(0, 0);
+            this.dgvlib.Name = "dgvlib";
+            this.dgvlib.ReadOnly = true;
+            this.dgvlib.RowHeadersWidth = 62;
+            this.dgvlib.RowTemplate.Height = 28;
+            this.dgvlib.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlib.Size = new System.Drawing.Size(544, 244);
+            this.dgvlib.TabIndex = 1;
             // 
             // btnsave
             // 
@@ -338,11 +342,65 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BorderRadius = 5;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.Tomato;
+            this.bunifuCards3.Controls.Add(this.dgvaut);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(562, 273);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(511, 244);
+            this.bunifuCards3.TabIndex = 2;
+            // 
+            // dgvaut
+            // 
+            this.dgvaut.AllowUserToAddRows = false;
+            this.dgvaut.AllowUserToDeleteRows = false;
+            this.dgvaut.AllowUserToOrderColumns = true;
+            this.dgvaut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvaut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvaut.Location = new System.Drawing.Point(0, 0);
+            this.dgvaut.Name = "dgvaut";
+            this.dgvaut.ReadOnly = true;
+            this.dgvaut.RowHeadersWidth = 62;
+            this.dgvaut.RowTemplate.Height = 28;
+            this.dgvaut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvaut.Size = new System.Drawing.Size(511, 244);
+            this.dgvaut.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label4.Location = new System.Drawing.Point(259, 249);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 20);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Libros";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label5.Location = new System.Drawing.Point(782, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Autores";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 577);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
@@ -354,8 +412,11 @@
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.bunifuCards2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlib)).EndInit();
+            this.bunifuCards3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvaut)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -372,7 +433,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbEdit;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbTitulo;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvlib;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -381,6 +442,10 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
+        private System.Windows.Forms.DataGridView dgvaut;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

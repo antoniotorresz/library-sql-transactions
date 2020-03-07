@@ -10,6 +10,12 @@ namespace Controlador
 {
     public class ControladorAutores
     {
+
+        public static DataTable ListarAutores()
+        {
+            DAutor datos = new DAutor();
+            return datos.ListarAutores();
+        }
         public static DataTable ListarNombreAutores()
         {
             DAutor datos = new DAutor();
