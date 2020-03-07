@@ -38,7 +38,7 @@ namespace Controlador
                 idAutores.Add(datos.ObtenerIdAutor(nombre));
             }
                         
-            return datos.InsertarLibroAutor(l, idAutores, pags);
+            return datos.ExecuteSqlTransaction(l, idAutores, pags);
         }
     }
 }

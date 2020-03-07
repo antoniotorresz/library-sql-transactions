@@ -47,6 +47,29 @@ namespace Sistema.Datos
             return Cadena;
         }
 
+        public string getString()
+        {
+            SqlConnection Cadena = new SqlConnection();
+            try
+            {
+                Cadena.ConnectionString = "Server=" + this.Servidor + "; Database=" + this.Base + ";";
+                if (this.Seguridad)
+                {
+                    Cadena.ConnectionString = Cadena.ConnectionString + "Integrated Security = SSPI";
+                }
+                else
+                {
+                    Cadena.ConnectionString = Cadena.ConnectionString + "User Id=" + this.Usuario + ";Password=" + this.Clave;
+                }
+            }
+            catch (Exception ex)
+            {
+                Cadena = null;
+                throw ex;
+            }
+            return Convert.ToString(Cadena);
+        }
+
         public static Conexion getInstancia()
         {
             if (Con == null)

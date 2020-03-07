@@ -41,94 +41,77 @@ namespace Datos
                 if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
             }
         }
-
-        public string InsertarLibroAutor(Libro l, List<int> idAutores, List<string> pags)
+        public string ExecuteSqlTransaction(Libro libro, List<int> idAutores, List<string> pags)
         {
-            string resultado = "";
-            SqlConnection sqlConnection = new SqlConnection();
-            sqlConnection = Conexion.getInstancia().CrearConexion();
-
-            SqlTransaction trx = sqlConnection.BeginTransaction("Sample");
-            try
+            int idGenerado;
+            string result = null;
+            using (SqlConnection connection = new SqlConnection("Server=ANTONIO-TORRES\\SQLEXPRESS; Database=Biblioteca;Integrated Security = SSPI"))
             {
-                int idLibro = InsertarLibro(l);
-                SqlCommand command = new SqlCommand("InsertLibroAutor", sqlConnection);
-                command.CommandType = CommandType.StoredProcedure;
+                connection.Open();
 
-                for (int i = 0; i < idAutores.Count(); i++)
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction("SampleTransaction");
+
+                // Must assign both transaction object and connection
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
                 {
+                    command.CommandText =
+                        "insert into Libro(titulo, editorial, fechaPublicacion, pais, isbn, imageUrl)" +
+                        " OUTPUT INSERTED.idLibro" +
+                        " values(@titulo, @editorial, @fechaPublicacion, @pais, @isbn, @imageUrl)";
+                    command.Parameters.Add("@titulo", SqlDbType.VarChar).Value = libro.titulo;
+                    command.Parameters.Add("@editorial", SqlDbType.VarChar).Value = libro.editorial;
+                    command.Parameters.Add("@fechaPublicacion", SqlDbType.Date).Value = libro.fechaPublicacion;
+                    command.Parameters.Add("@pais", SqlDbType.VarChar).Value = libro.pais;
+                    command.Parameters.Add("@isbn", SqlDbType.VarChar).Value = libro.isbn;
+                    command.Parameters.Add("@imageUrl", SqlDbType.VarChar).Value = libro.imageUrl;
 
-                    command.Parameters.Add("@idLibro", SqlDbType.VarChar).Value = idLibro;
-                    command.Parameters.Add("@idAutor", SqlDbType.VarChar).Value = idAutores[i];
-                    command.Parameters.Add("@numPaginas", SqlDbType.Date).Value = Convert.ToInt32(pags[i]);
-                    command.ExecuteNonQuery();
 
+                    idGenerado = Convert.ToInt32(command.ExecuteScalar());
+
+                    for (int i = 0; i < idAutores.Count; i++)
+                    {
+                        command.Parameters.Clear();
+                        command.CommandText = "insert into libroAutor(idLibro, idAutor, numPaginas)" +
+                            " values (@idLib, @idAut, @npags)";
+                        command.Parameters.AddWithValue("@idLib", idGenerado);
+                        command.Parameters.AddWithValue("@idAut", idAutores[i]);
+                        command.Parameters.AddWithValue("@npags", Convert.ToInt32(pags[i]));
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+                    result = libro.titulo + " agregado a la base de datos.";
                 }
-
-                trx.Commit();
-                resultado = "Toda ha salido bien";
-            }
-            catch (Exception ex)
-            {
-                trx.Rollback();
-                resultado = ex.Message;
-            }
-            finally
-            {
-                if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
-            }
-
-            return resultado;
-        }
-
-        public int InsertarLibro(Libro libro)
-        {
-            Int32 idGenerado = 0;
-            SqlConnection sqlConnection = new SqlConnection();
-
-            try
-            {
-                sqlConnection = Conexion.getInstancia().CrearConexion();
-                SqlCommand command = new SqlCommand("InsertarLibro", sqlConnection);
-                command.CommandType = CommandType.StoredProcedure;
-
-                //Agregamos los parametros:
-                command.Parameters.Add("@titulo", SqlDbType.VarChar).Value = libro.titulo;
-                command.Parameters.Add("@editorial", SqlDbType.VarChar).Value = libro.editorial;
-                command.Parameters.Add("@fechaPublicacion", SqlDbType.Date).Value = libro.fechaPublicacion;
-                command.Parameters.Add("@pais", SqlDbType.VarChar).Value = libro.pais;
-                command.Parameters.Add("@isbn", SqlDbType.VarChar).Value = libro.isbn;
-                command.Parameters.Add("@imageUrl", SqlDbType.VarChar).Value = libro.imageUrl;
-
-                //Aqui debemos de hacer la transaccion... 
-
-                //Abrimos la conexion y guardamos el resultado en respuesta
-
-                sqlConnection.Open();
-                idGenerado = (Int32)command.ExecuteScalar();
-
-                if (command.ExecuteNonQuery() == 1) // el 1 respresenta un resultado exitoso
+                catch (Exception ex)
                 {
-                    //Esto quiere decir que se ingresó el provedor correctamente
-                    //respuesta = "OK";
+                    result = ex.ToString();
+                    Console.WriteLine("NO COMMIT EXCEP:" + result);
+                    
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (Exception ex2)
+                    {
+                        // This catch block will handle any errors that may have occurred
+                        // on the server that would cause the rollback to fail, such as
+                        // a closed connection.
+                        Console.WriteLine("Rollback Exception Type: {0}", ex2.GetType());
+                        Console.WriteLine("  Message: {0}", ex2.Message);
+                    }
                 }
-                else
-                {
-                    //respuesta = "No se pudo completar la solicitud...";
-                }
-
-
             }
-            catch (Exception e)
-            {
-                //respuesta = e.ToString();
-            }
-            finally
-            {
-                //if (sqlConnection.State == ConnectionState.Open) sqlConnection.Close();
-            }
-
-            return idGenerado;
+            return result;
         }
 
         public int ObtenerIdAutor(string valor)
