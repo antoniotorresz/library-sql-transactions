@@ -62,7 +62,6 @@ namespace library_sql_transactions
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cmbAutores.Items.Add(dt.Rows[i]["nombre"]);
-                //this.autoresBD.Add(Convert.ToString(dt.Rows[i]["nombre"]));
             }
 
         }

@@ -90,6 +90,8 @@ namespace Datos
 
                     // Attempt to commit the transaction.
                     transaction.Commit();
+                    Firebase firebase = new Firebase();
+                    firebase.InsertLibro(libro, idGenerado);
                     result = libro.titulo + " agregado a la base de datos.";
                 }
                 catch (Exception ex)
