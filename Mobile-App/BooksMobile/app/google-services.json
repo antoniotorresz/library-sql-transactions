@@ -1,0 +1,307 @@
+{
+  "project_info": {
+    "project_number": "36355512992",
+    "firebase_url": "https://fir-androidudemy.firebaseio.com",
+    "project_id": "fir-androidudemy",
+    "storage_bucket": "fir-androidudemy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:094c494eb54b5b70db87c5",
+        "android_client_info": {
+          "package_name": "com.alain.cursos.misfotografias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-ifg52akfdn40cvdut5cepph9uacgff5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alain.cursos.misfotografias",
+            "certificate_hash": "60a478a35a9fd4907bb788ee92565be53f81c09e"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:1b61236d8abf4c81db87c5",
+        "android_client_info": {
+          "package_name": "com.antonio.booksmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-8jcjtg0jvg1b1dmbfltadrr72f48e7e1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.booksmobile",
+            "certificate_hash": "60a478a35a9fd4907bb788ee92565be53f81c09e"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:c74ae193522fc3bc",
+        "android_client_info": {
+          "package_name": "com.antonio.cursofirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-hhgoimqvl1nku7e72b0vmkjbkuh3kb51.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.cursofirebase",
+            "certificate_hash": "c11174f2f9be1d32a5ca4df2a7b26f21b69ee335"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:a408d34a08e765ee",
+        "android_client_info": {
+          "package_name": "com.antonio.easyroutes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-3drc8s4um8b8r5t8doj5bj3hej4qe8u1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.easyroutes",
+            "certificate_hash": "d9918a088d1e3a0784d1dddc71e9ee9c3ade84d2"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:8675823c7d842bdd",
+        "android_client_info": {
+          "package_name": "com.antonio.fcmofertas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-stt37dhb5nbp922nianf34anned0sdqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.fcmofertas",
+            "certificate_hash": "c11174f2f9be1d32a5ca4df2a7b26f21b69ee335"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:e65a29b257efca4c",
+        "android_client_info": {
+          "package_name": "com.antonio.multilogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-tve42nj76ln2gtkr2hsosp7du2oinlbh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.multilogin",
+            "certificate_hash": "c11174f2f9be1d32a5ca4df2a7b26f21b69ee335"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:cf25b5161ed3ae7b",
+        "android_client_info": {
+          "package_name": "com.antonio.mymenucomidasfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-8d9hhbhc22gvnugc78aqiekilfc67aip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.mymenucomidasfirebase",
+            "certificate_hash": "c11174f2f9be1d32a5ca4df2a7b26f21b69ee335"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36355512992:android:d62b871038eceafb",
+        "android_client_info": {
+          "package_name": "com.antonio.ofertas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36355512992-n5fhk04i0obmqronnid8tc9ka1h0ump3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antonio.ofertas",
+            "certificate_hash": "c11174f2f9be1d32a5ca4df2a7b26f21b69ee335"
+          }
+        },
+        {
+          "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDibyZ8S1EB99yEU-iXQFRx3Rb-My7419A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36355512992-ccgkff0k7et9f8jsnbcfnid3o3fdm61b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
