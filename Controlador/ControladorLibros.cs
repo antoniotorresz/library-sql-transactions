@@ -23,6 +23,17 @@ namespace Controlador
 
             List<int> idAutores = new List<int>();
             Libro l = new Libro();
+            string str = "";
+
+            DLibro datos = new DLibro();
+
+            foreach (string nombre in nombres)
+            {
+                str += nombre + ", ";
+                idAutores.Add(datos.ObtenerIdAutor(nombre));
+            }
+
+            str = str.Remove((str.Length - 2), 2) + ".";
 
             l.titulo = titulo;
             l.editorial = editorial;
@@ -30,14 +41,9 @@ namespace Controlador
             l.pais = pais;
             l.isbn = isbn;
             l.imageUrl = url;
+            l.autores = str;
+            
 
-            DLibro datos = new DLibro();
-
-            foreach (string nombre in nombres)
-            {
-                idAutores.Add(datos.ObtenerIdAutor(nombre));
-            }
-                        
             return datos.ExecuteSqlTransaction(l, idAutores, pags);
         }
     }

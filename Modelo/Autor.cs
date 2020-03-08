@@ -13,5 +13,6 @@ namespace Modelo
         public string sexo { get; set; }
         public DateTime fechaAlta { get; set; }
         public string pais { get; set; }
+        
     }
 }

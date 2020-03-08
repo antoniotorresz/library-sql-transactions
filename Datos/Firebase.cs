@@ -36,10 +36,11 @@ namespace Datos
                 fechaPublicacion = l.fechaPublicacion,
                 imageUrl = l.imageUrl, 
                 isbn = l.isbn, 
-                pais = l.pais
+                pais = l.pais,
+                autores = l.autores
             };
             Start();
-            SetResponse response = await client.SetTaskAsync("Libros/" + l.titulo, libro);
+            SetResponse response = await client.SetTaskAsync("Books/" + l.titulo, libro);
             Libro result = response.ResultAs<Libro>();
         }
     }

@@ -15,5 +15,6 @@ namespace Modelo
         public string pais { get; set; }
         public string isbn { get; set; }
         public string imageUrl { get; set; }
+        public string autores { get; set; }
     }
 }
